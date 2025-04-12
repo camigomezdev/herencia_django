@@ -9,6 +9,6 @@
       <strong>Publicado:</strong> {{ post.created_at }}
     </p>
 
-    {% include 'multiclass/detail_'|add:post.post_type|add:'.html' %}
+    {% include 'post/detail_'|add:post.post_type|add:'.html' %}
   </div>
 {% endblock %}

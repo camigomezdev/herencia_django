@@ -1,0 +1,26 @@
+{% extends 'common/base.html' %}
+{% block content %}
+  <div class="container">
+    <h1>{{ post.title }}</h1>
+    <p>
+      <strong>Autor:</strong> {{ post.author }}
+    </p>
+    <p>
+      <strong>Publicado:</strong> {{ post.created_at }}
+    </p>
+
+    <div class="text-post">
+      <p>{{ post.content }}</p>
+    </div>
+
+    <ul>
+      <h1>comments</h1>
+      {% for comment in post.comments.all %}
+        <li>
+          <strong>{{ comment.author }}</strong>:
+          {{ comment.content }} ({{ comment.created_at }})
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

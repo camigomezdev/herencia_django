@@ -12,4 +12,9 @@ def index(request):
 def post_detail_view(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
+    if post.post_type == 'text':
+        post = TextPost.objects.get(pk=pk)
+    elif post.post_type == 'image':
+        post = ImagePost.objects.get(pk=pk)
+
     return render(request, 'post/detail.html', {'post': post})

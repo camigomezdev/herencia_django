@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
 
-    'post.apps.PostConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
